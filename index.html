@@ -1,0 +1,572 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agora</title>
+  <style>
+      
+     
+      #container {
+      position: relative;
+      height: 100vh; /* Adjust the height for scrolling */
+    }
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+    }
+    #container {
+      position: relative;
+    }
+    #background-image {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      background-image: url('images/giphy%20(5).gif');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+    }
+    #article {
+      max-width: 900px;
+      padding: 20px;
+      margin: auto;
+      z-index: 1;
+      position: relative;
+    }
+  
+    h1 {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 50px;
+      color: lightgoldenrodyellow;
+      text-align: center;
+      z-index: 1;
+    }
+    /* Popup */
+    .popup {
+      display: none;
+      position: fixed;
+      transform: translate(-50%, -50%);
+      width: 27.2%;
+      height: 35%;
+      background-color: white;
+      border: 1px solid black;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+      z-index: 999;
+      padding: 2px;
+      border-radius: 5px;
+    }
+    .popup img {
+      display: block;
+      margin: auto;
+      margin-top: 3vh;
+      width: 400px;
+      border-radius: 5px;
+    }
+    .close-button {
+      position: absolute;
+      top: 2%;
+      right: 2%;
+      color: white;
+      font-size: 15px;
+      cursor: pointer;
+      background-color: rgba(170, 0, 0.1);
+      padding: 1px 5px;
+      border-radius: 20px;
+    }
+      
+       .popup2 {
+      display: none;
+           
+      position: fixed;
+      transform: translate(-50%, -50%);
+      width: 20%;
+      height: 37.5%;
+      background-color: white;
+      border: 1px solid black;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+      z-index: 999;
+      padding: 3px;
+           padding-top: 29px;
+      border-radius: 5px;
+    }
+  
+      
+       .popup3 {
+      display: none;
+           
+      position: fixed;
+      transform: translate(-50%, -50%);
+      width: 20%;
+      height: 52.9%;
+      background-color: white;
+      border:1px solid black;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+      z-index: 999;
+      padding: 2px;
+           padding-top: 32px;
+      border-radius: 5px;
+    }
+      
+        .popup4 {
+      display: none;
+           
+      position: fixed;
+      transform: translate(-50%, -50%);
+      width: 20%;
+      height: 26%;
+      background-color: white;
+      border:1px solid black;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+      z-index: 999;
+      padding: 2px;
+           padding-top: 32px;
+      border-radius: 5px;
+    }
+      
+       .popup5 {
+      display: none;
+           
+      position: fixed;
+      transform: translate(-50%, -50%);
+      width: 20%;
+      height: 62.7%;
+      background-color: white;
+      border:1px solid black;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+      z-index: 999;
+      padding: 2px;
+           padding-top: 35px;
+      border-radius: 5px;
+    }
+  
+      
+      
+      
+      
+      
+  </style>
+</head>
+<body>
+  <div id="container">
+    <div id="background-image"></div>
+    <div id="article">
+      <h1>WELCOME TO YOUR DIGITAL AGORA</h1>
+      <div id="content">
+
+        <p>
+         Scroll down to enter.  <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+        </p>
+      </div>
+    </div>
+  
+  </div>
+
+  <!-- First Popup -->
+  <div id="popup1" class="popup">
+    <span class="close-button" onclick="closePopup('popup1')">X</span>
+
+      <img src="images/9-1.png" alt="Popup Image">
+
+  </div>
+
+  <!-- Second Popup -->
+  <div id="popup2" class="popup">
+    <span class="close-button" onclick="closePopup('popup2')">X</span>
+  
+      <img src="images/9-2.png" alt="Another Popup Image">
+
+  </div>
+
+  <!-- Third Popup -->
+  <div id="popup3" class="popup">
+    <span class="close-button" onclick="closePopup('popup3')">X</span>
+
+      <img src="images/9-3.png" alt="Third Popup Image">
+
+  </div>
+    
+    
+    <div id="popup4" class="popup2">
+    <span class="close-button" onclick="closePopup('popup4')">X</span>
+      <img style="border-radius: 5px;width: 100%;" src="images/01.png" alt="Popup Image">
+  </div>
+    
+   
+     <div id="popup5" class="popup2">
+    <span class="close-button" onclick="closePopup('popup5')">X</span>
+         
+      <img style="border-radius: 5px;width: 100%;" src="images/02.png" alt="Popup Image">
+  </div>
+    
+     <div id="popup6" class="popup2">
+    <span class="close-button" onclick="closePopup('popup6')">X</span>
+      <img style="border-radius: 5px;width: 100%;" src="images/03.png" alt="Popup Image">
+  </div>
+    
+    
+     <div id="popup7" class="popup2">
+    <span class="close-button" onclick="closePopup('popup7')">X</span>
+      <img style="border-radius: 5px;width: 100%;" src="images/04.png" alt="Popup Image">
+  </div>
+    
+      <div id="popup8" class="popup2">
+    <span class="close-button" onclick="closePopup('popup8')">X</span>
+      <img style="border-radius: 5px;width: 100%;" src="images/05.png" alt="Popup Image">
+  </div>
+    
+     <div id="popup9" class="popup3">
+    <span class="close-button" onclick="closePopup('popup9')">X</span>
+      <img style="border-radius: 5px;width: 100%;" src="images/add3.gif" alt="Popup Image">
+  </div> 
+    <div id="popup10" class="popup3">
+    <span class="close-button" onclick="closePopup('popup10')">X</span>
+      <img style="border-radius: 5px;width: 100%;" src="images/31.jpeg" alt="Popup Image">
+  </div>
+    <div id="popup11" class="popup3">
+    <span class="close-button" onclick="closePopup('popup11')">X</span>
+      <img style="border-radius: 5px;width: 100%;" src="images/32.gif" alt="Popup Image">
+  </div>
+    <div id="popup12" class="popup3">
+    <span class="close-button" onclick="closePopup('popup12')">X</span>
+      <img style="border-radius: 5px;width: 100%;" src="images/33.png" alt="Popup Image">
+  </div>
+      <div id="popup13" class="popup3">
+    <span class="close-button" onclick="closePopup('popup13')">X</span>
+      <img style="border-radius: 5px;width: 100%;" src="images/34.png" alt="Popup Image">
+  </div>
+      <div id="popup14" class="popup4">
+    <span class="close-button" onclick="closePopup('popup14')">X</span>
+      <img style="border-radius: 5px;width: 100%;" src="images/4-1.gif" alt="Popup Image">
+  </div>
+      <div id="popup15" class="popup4">
+    <span class="close-button" onclick="closePopup('popup15')">X</span>
+      <img style="border-radius: 5px;width: 100%;" src="images/4-1.jpeg" alt="Popup Image">
+  </div>
+      <div id="popup16" class="popup4">
+    <span class="close-button" onclick="closePopup('popup16')">X</span>
+      <img style="border-radius: 5px;width: 100%;" src="images/4-1.jpg" alt="Popup Image">
+  </div>
+      <div id="popup17" class="popup4">
+    <span class="close-button" onclick="closePopup('popup17')">X</span>
+      <img style="border-radius: 5px;width: 100%;" src="images/4.jpeg" alt="Popup Image">
+  </div>
+    
+     <div id="popup18" class="popup5">
+    <span class="close-button" onclick="closePopup('popup18')">X</span>
+      <img style="border-radius: 5px;width: 100%;" src="images/4-2%202.png" alt="Popup Image">
+  </div> 
+    <div id="popup19" class="popup5">
+    <span class="close-button" onclick="closePopup('popup19')">X</span>
+      <img style="border-radius: 5px;width: 100%;" src="images/4-2%203.png" alt="Popup Image">
+  </div> 
+    <div id="popup20" class="popup5">
+    <span class="close-button" onclick="closePopup('popup20')">X</span>
+      <img style="border-radius: 5px;width: 100%;" src="images/4-2.jpeg" alt="Popup Image">
+  </div> 
+    <div id="popup21" class="popup5">
+    <span class="close-button" onclick="closePopup('popup21')">X</span>
+      <img style="border-radius: 5px;width: 100%;" src="images/4-2.png" alt="Hi! Why are you here? You shouldn't be seeing this...">
+  </div>
+    
+    <div style="position: relative;
+      width: 2000px;
+       " id="image-container">
+
+  </div>
+
+    
+    
+  
+  <script>
+    function showPopup(popupId) {
+      var popup = document.getElementById(popupId);
+        var popup2 = document.getElementById(popupId);
+         var popup3 = document.getElementById(popupId);
+          var popup4 = document.getElementById(popupId);
+        var popup5 = document.getElementById(popupId);    
+      popup.style.display = 'block';
+         popup2.style.display = 'block';
+        popup3.style.display = 'block';
+        popup4.style.display = 'block';
+         popup5.style.display = 'block';
+
+      // Get viewport dimensions
+      var viewportWidth = window.innerWidth;
+      var viewportHeight = window.innerHeight;
+
+      // Get popup dimensions
+      var popupWidth = popup.offsetWidth;
+      var popupHeight = popup.offsetHeight;
+         var popupWidth = popup2.offsetWidth;
+      var popupHeight = popup2.offsetHeight;
+         var popupWidth = popup3.offsetWidth;
+      var popupHeight = popup3.offsetHeight;
+         var popupWidth = popup4.offsetWidth;
+      var popupHeight = popup4.offsetHeight;
+         var popupWidth = popup5.offsetWidth;
+      var popupHeight = popup5.offsetHeight;
+
+      // Calculate maximum allowable top and left positions
+      var topMin = 3000; // Minimum top position
+      var topMax = window.innerHeight - popup.offsetHeight - 0; // Maximum top position
+      var leftMin = 3000; // Minimum left position
+      var leftMax = window.innerWidth - popup.offsetWidth - 0; // Maximum left position
+    
+        var topMin = 170; // Minimum top position
+      var topMax = window.innerHeight - popup2.offsetHeight/2.5; // Maximum top position
+      var leftMin = 170; // Minimum left position
+      var leftMax = window.innerWidth - popup2.offsetWidth/2.5; // Maximum left position
+        
+          var topMin = 250; // Minimum top position
+      var topMax = window.innerHeight - popup3.offsetHeight/2.5; // Maximum top position
+      var leftMin = 170; // Minimum left position
+      var leftMax = window.innerWidth - popup3.offsetWidth/2.5; // Maximum left position
+        
+          var topMin = 240; // Minimum top position
+      var topMax = window.innerHeight - popup4.offsetHeight/30; // Maximum top position
+      var leftMin = 170; // Minimum left position
+      var leftMax = window.innerWidth - popup4.offsetWidth/2.5; // Maximum left position
+
+          var topMin = 255; // Minimum top position
+      var topMax = window.innerHeight - popup5.offsetHeight/2.3; // Maximum top position
+      var leftMin = 170; // Minimum left position
+      var leftMax = window.innerWidth - popup5.offsetWidth/1.9; // Maximum left position
+
+
+      // Generate random values for top and left positions
+      var randomTop = Math.floor(Math.random() * (topMax - topMin + 1)) + topMin;
+      var randomLeft = Math.floor(Math.random() * (leftMax - leftMin + 1)) + leftMin;
+
+      // Apply the random positions to the popup
+      popup.style.top = randomTop + 'px';
+      popup.style.left = randomLeft + 'px';
+           popup2.style.top = randomTop + 'px';
+      popup2.style.left = randomLeft + 'px';
+         popup3.style.top = randomTop + 'px';
+      popup3.style.left = randomLeft + 'px';
+        popup4.style.top = randomTop + 'px';
+      popup4.style.left = randomLeft + 'px';
+         popup5.style.top = randomTop + 'px';
+      popup5.style.left = randomLeft + 'px';
+    }
+
+    function closePopup(popupId) {
+      document.getElementById(popupId).style.display = 'none';
+      setTimeout(function() {
+        showPopup(popupId);
+      }, 100000); // 5000 milliseconds = 5 seconds
+    }
+
+    function closePopup(popupId) {
+      document.getElementById(popupId).style.display = 'none';
+      var timeoutDuration = Math.floor(Math.random() * (10000 - 5000 + 1)) + 5000; // Random duration between 5 and 10 seconds
+      setTimeout(function() {
+        showPopup(popupId);
+      }, timeoutDuration);
+    }
+
+    window.onload = function() {
+      var popup1Duration = Math.floor(Math.random() * (500000 - 28000 + 1)) + 270000; // Random duration between 15 and 20 seconds
+      var popup2Duration = Math.floor(Math.random() * (52000 - 22000 + 1)) + 22000; // Random duration between 10 and 15 seconds
+      var popup3Duration = Math.floor(Math.random() * (54000 - 23000 + 1)) + 23000; // Random duration between 12 and 18 seconds
+      var popup4Duration = Math.floor(Math.random() * (56000 - 28000 + 1)) +28000; // Random duration between 12 and 18 seconds
+         var popup5Duration = Math.floor(Math.random() * (58000 - 2200 + 1)) + 21000; // Random duration between 12 and 18 seconds
+         var popup6Duration = Math.floor(Math.random() * (58000 - 25000 + 1)) + 25000; // Random duration between 12 and 18 seconds
+         var popup7Duration = Math.floor(Math.random() * (51000 - 26000 + 1)) + 25000; // Random duration between 12 and 18 seconds
+         var popup8Duration = Math.floor(Math.random() * (55000 - 25000 + 1)) + 25000; // Random duration between 12 and 18 seconds
+        var popup9Duration = Math.floor(Math.random() * (50000 - 25000 + 1)) + 25000; // Random duration between 12 and 18 seconds
+var popup10Duration = Math.floor(Math.random() * (52000 - 25000 + 1)) + 25000; // Random duration between 12 and 18 seconds
+var popup11Duration = Math.floor(Math.random() * (54000 - 27000 + 1)) + 25000; // Random duration between 12 and 18 seconds
+var popup12Duration = Math.floor(Math.random() * (570000 - 25000 + 1)) + 25000; // Random duration between 12 and 18 seconds
+        var popup13Duration = Math.floor(Math.random() * (510000 - 22000 + 1)) + 22000; // Random duration between 12 and 18 seconds
+var popup14Duration = Math.floor(Math.random() * (52000 - 25000 + 1)) + 25000; // Random duration between 12 and 18 seconds
+var popup15Duration = Math.floor(Math.random() * (54000 - 24000 + 1)) + 25000; // Random duration between 12 and 18 seconds
+var popup16Duration = Math.floor(Math.random() * (570000 - 25000 + 1)) + 25000; // Random duration between 12 and 18 seconds
+        var popup17Duration = Math.floor(Math.random() * (520000 - 22000 + 1)) + 23000; // Random duration between 12 and 18 seconds
+        var popup18Duration = Math.floor(Math.random() * (50000 - 22000 + 1)) + 20000; // Random duration between 15 and 20 seconds
+      var popup19Duration = Math.floor(Math.random() * (52000 - 27000 + 1)) + 27000; // Random duration between 10 and 15 seconds
+      var popup20Duration = Math.floor(Math.random() * (54000 - 25000 + 1)) + 28000; // Random duration between 12 and 18 seconds
+      var popup21Duration = Math.floor(Math.random() * (56000 - 28000 + 1)) +28000; // Random duration between 12 and 18 seconds
+
+
+
+
+      setTimeout(function
+
+() {
+        showPopup('popup1');
+      }, popup1Duration);
+
+      setTimeout(function() {
+        showPopup('popup2');
+      }, popup2Duration);
+
+      setTimeout(function() {
+        showPopup('popup3');
+      }, popup3Duration);
+        
+        setTimeout(function() {
+        showPopup('popup4');
+      }, popup4Duration);
+        
+        
+           setTimeout(function() {
+        showPopup('popup5');
+      }, popup5Duration);
+        
+           setTimeout(function() {
+        showPopup('popup6');
+      }, popup6Duration);
+           setTimeout(function() {
+        showPopup('popup7');
+      }, popup7Duration);
+           setTimeout(function() {
+        showPopup('popup8');
+      }, popup8Duration);
+         setTimeout(function() {
+        showPopup('popup9');
+      }, popup9Duration);
+       setTimeout(function() {
+        showPopup('popup10');
+      }, popup10Duration);
+        setTimeout(function() {
+        showPopup('popup11');
+      }, popup11Duration);
+        setTimeout(function() {
+        showPopup('popup12');
+      }, popup12Duration);
+        setTimeout(function() {
+        showPopup('popup13');
+      }, popup13Duration);
+        setTimeout(function() {
+        showPopup('popup14');
+      }, popup14Duration);
+        setTimeout(function() {
+        showPopup('popup15');
+      }, popup15Duration);
+        setTimeout(function() {
+        showPopup('popup16');
+      }, popup16Duration);
+        setTimeout(function() {
+        showPopup('popup17');
+      }, popup17Duration);
+        
+        setTimeout(function() {
+        showPopup('popup18');
+      }, popup18Duration);
+        setTimeout(function() {
+        showPopup('popup19');
+      }, popup19Duration);
+        setTimeout(function() {
+        showPopup('popup20');
+      }, popup20Duration);
+        setTimeout(function() {
+        showPopup('popup21');
+      }, popup21Duration);
+        
+        
+        
+         
+        
+        
+        
+ window.onscroll = function() {
+      var scrollSpeed = window.pageYOffset * 0.5;
+      document.getElementById('background-image').style.backgroundPositionY = '-' + scrollSpeed + 'px';
+      document.querySelector('h1').style.top = 50 + window.pageYOffset / 50 + '%';
+   
+        if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+          appendContent(); // Call a function to append more content
+        }
+      };
+    };
+
+   function appendContent() {
+    var newContent = document.createElement('div');
+    newContent.innerHTML = '<p>you are here <br /><br /> you are here</p> ';
+    document.getElementById('content').appendChild(newContent);
+
+    // Array of image sources
+    var imageSources = [ 
+       
+        {src: 'gif/1.gif', alt: 'Image 2' },
+         {src: 'gif/2.gif', alt: 'Image 2' },
+         {src: 'gif/3.gif', alt: 'Image 2' },
+        {src: 'gif/4.gif', alt: 'Image 2' },
+         {src: 'gif/5.gif', alt: 'Image 2' },
+         {src: 'gif/6.gif', alt: 'Image 2' },
+         {src: 'gif/7.gif', alt: 'Image 2' },
+         {src: 'gif/8.gif', alt: 'Image 2' },
+         {src: 'gif/9.gif', alt: 'Image 2' },
+         {src: 'gif/10.gif', alt: 'Image 2' },
+         {src: 'gif/11.gif', alt: 'Image 2' },
+         {src: 'gif/12.gif', alt: 'Image 2' },
+        {src: 'gif/13.gif', alt: 'Image 2' },
+         {src: 'gif/14.gif', alt: 'Image 2' },
+         {src: 'gif/15.gif', alt: 'Image 2' },
+         {src: 'gif/16.gif', alt: 'Image 2' },
+         {src: 'gif/17.gif', alt: 'Image 2' },
+         {src: 'gif/18.gif', alt: 'Image 2' },
+         {src: 'gif/19.gif', alt: 'Image 2' },
+         {src: 'gif/20.gif', alt: 'Image 2' },
+    
+     
+    ];
+
+    // Shuffle the array of image sources
+    imageSources = shuffle(imageSources);
+
+    // Append images in the shuffled order
+    imageSources.forEach(function(image) {
+        appendImage(image.src, image.alt);
+    });
+}
+
+// Function to shuffle an array 
+function shuffle(array) {
+    var currentIndex = array.length, temporaryValue, randomIndex;
+
+    
+    while (0 !== currentIndex) {
+
+        // Pick a remaining element...
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex -= 1;
+
+        // And swap it with the current element.
+        temporaryValue = array[currentIndex];
+        array[currentIndex] = array[randomIndex];
+        array[randomIndex] = temporaryValue;
+    }
+
+    return array;
+}
+
+// Function to append an image dynamically
+function appendImage(src, alt) {
+    // Create a new image element
+    var img = document.createElement('img');
+
+    // Set image source and alt text
+    img.src = src;
+    img.alt = alt;
+
+    // Append the image to the container
+    document.getElementById('image-container').appendChild(img);
+}
+
+// Call appendContent() to append the content and images
+appendContent();
+
+  </script>
+</body>
+</html>
