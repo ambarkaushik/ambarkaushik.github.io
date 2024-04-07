@@ -55,20 +55,21 @@
       display: none;
       position: fixed;
       transform: translate(-50%, -50%);
-      width: 27.2%;
-      height: 35%;
+      width: 450px;
+      height: 320px;
       background-color: white;
       border: 1px solid black;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
       z-index: 999;
       padding: 2px;
+        padding-top: 13px;
       border-radius: 5px;
     }
     .popup img {
       display: block;
       margin: auto;
       margin-top: 3vh;
-      width: 400px;
+      width: 450px;
       border-radius: 5px;
     }
     .close-button {
@@ -88,8 +89,8 @@
            
       position: fixed;
       transform: translate(-50%, -50%);
-      width: 20%;
-      height: 37.5%;
+      width: 300px;
+      height: 318px;
       background-color: white;
       border: 1px solid black;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
@@ -105,8 +106,8 @@
            
       position: fixed;
       transform: translate(-50%, -50%);
-      width: 20%;
-      height: 52.9%;
+      width: 300px;
+      height: 450px;
       background-color: white;
       border:1px solid black;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
@@ -121,14 +122,14 @@
            
       position: fixed;
       transform: translate(-50%, -50%);
-      width: 20%;
-      height: 26%;
+      width: 300px;
+      height: 221px;
       background-color: white;
       border:1px solid black;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
       z-index: 999;
       padding: 2px;
-           padding-top: 32px;
+           padding-top: 29px;
       border-radius: 5px;
     }
       
@@ -137,8 +138,8 @@
            
       position: fixed;
       transform: translate(-50%, -50%);
-      width: 20%;
-      height: 62.7%;
+      width: 300px;
+      height: 534px;
       background-color: white;
       border:1px solid black;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
@@ -174,7 +175,7 @@
   <div id="popup1" class="popup">
     <span class="close-button" onclick="closePopup('popup1')">X</span>
 
-      <img src="images/9-1.png" alt="Popup Image">
+      <img  src="images/9-1.png" alt="Popup Image">
 
   </div>
 
@@ -375,25 +376,25 @@
     }
 
     window.onload = function() {
-      var popup1Duration = Math.floor(Math.random() * (500000 - 28000 + 1)) + 270000; // Random duration between 15 and 20 seconds
+      var popup1Duration = Math.floor(Math.random() * (58000 - 28000 + 1)) + 240000; // Random duration between 15 and 20 seconds
       var popup2Duration = Math.floor(Math.random() * (52000 - 22000 + 1)) + 22000; // Random duration between 10 and 15 seconds
       var popup3Duration = Math.floor(Math.random() * (54000 - 23000 + 1)) + 23000; // Random duration between 12 and 18 seconds
       var popup4Duration = Math.floor(Math.random() * (56000 - 28000 + 1)) +28000; // Random duration between 12 and 18 seconds
-         var popup5Duration = Math.floor(Math.random() * (58000 - 2200 + 1)) + 21000; // Random duration between 12 and 18 seconds
+         var popup5Duration = Math.floor(Math.random() * (53000 - 21000 + 1)) + 21000; // Random duration between 12 and 18 seconds
          var popup6Duration = Math.floor(Math.random() * (58000 - 25000 + 1)) + 25000; // Random duration between 12 and 18 seconds
          var popup7Duration = Math.floor(Math.random() * (51000 - 26000 + 1)) + 25000; // Random duration between 12 and 18 seconds
          var popup8Duration = Math.floor(Math.random() * (55000 - 25000 + 1)) + 25000; // Random duration between 12 and 18 seconds
-        var popup9Duration = Math.floor(Math.random() * (50000 - 25000 + 1)) + 25000; // Random duration between 12 and 18 seconds
+        var popup9Duration = Math.floor(Math.random() * (50000 - 24000 + 1)) + 24000; // Random duration between 12 and 18 seconds
 var popup10Duration = Math.floor(Math.random() * (52000 - 25000 + 1)) + 25000; // Random duration between 12 and 18 seconds
 var popup11Duration = Math.floor(Math.random() * (54000 - 27000 + 1)) + 25000; // Random duration between 12 and 18 seconds
 var popup12Duration = Math.floor(Math.random() * (570000 - 25000 + 1)) + 25000; // Random duration between 12 and 18 seconds
         var popup13Duration = Math.floor(Math.random() * (510000 - 22000 + 1)) + 22000; // Random duration between 12 and 18 seconds
-var popup14Duration = Math.floor(Math.random() * (52000 - 25000 + 1)) + 25000; // Random duration between 12 and 18 seconds
+var popup14Duration = Math.floor(Math.random() * (51000 - 26000 + 1)) + 26000; // Random duration between 12 and 18 seconds
 var popup15Duration = Math.floor(Math.random() * (54000 - 24000 + 1)) + 25000; // Random duration between 12 and 18 seconds
 var popup16Duration = Math.floor(Math.random() * (570000 - 25000 + 1)) + 25000; // Random duration between 12 and 18 seconds
         var popup17Duration = Math.floor(Math.random() * (520000 - 22000 + 1)) + 23000; // Random duration between 12 and 18 seconds
         var popup18Duration = Math.floor(Math.random() * (50000 - 22000 + 1)) + 20000; // Random duration between 15 and 20 seconds
-      var popup19Duration = Math.floor(Math.random() * (52000 - 27000 + 1)) + 27000; // Random duration between 10 and 15 seconds
+      var popup19Duration = Math.floor(Math.random() * (56000 - 22000 + 1)) + 22000; // Random duration between 10 and 15 seconds
       var popup20Duration = Math.floor(Math.random() * (54000 - 25000 + 1)) + 28000; // Random duration between 12 and 18 seconds
       var popup21Duration = Math.floor(Math.random() * (56000 - 28000 + 1)) +28000; // Random duration between 12 and 18 seconds
 
