@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Your Name – Artist</title>
+<meta name="description" content="Artist working in new media on the fourth dimension, excess, and the limits of representation.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f5f5f3; --fg:#1c1c1c; --muted:#6b6b68; --line:#d8d8d4; --block:#e4e4e0;
+  --sans:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+  --pad:clamp(1.25rem,4vw,3rem);
+}
+@media (prefers-color-scheme:dark){
+  :root{--bg:#161616; --fg:#ececea; --muted:#9a9a96; --line:#333; --block:#242424}
+}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--fg);font:400 1rem/1.6 var(--sans);-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration-color:var(--line);text-underline-offset:3px}
+a:hover{text-decoration-color:currentColor}
+:focus-visible{outline:2px solid var(--fg);outline-offset:3px}
+
+header{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;flex-wrap:wrap;padding:1.25rem var(--pad);border-bottom:1px solid var(--line)}
+.name{font-weight:500;text-decoration:none}
+nav{display:flex;gap:1.5rem}
+nav a{text-decoration:none;color:var(--muted)}
+nav a:hover,nav a[aria-current="page"]{color:var(--fg)}
+nav a[aria-current="page"]{text-decoration:underline;text-decoration-color:var(--fg)}
+
+main{padding:var(--pad);max-width:1400px;margin:0 auto}
+.view{display:none}
+.view.active{display:block}
+h1{font-weight:500;font-size:clamp(1.5rem,3vw,2.1rem);line-height:1.2;letter-spacing:-.01em}
+h2{font-weight:500;font-size:1.15rem;margin:2.5rem 0 .75rem}
+p{max-width:68ch}
+p+p{margin-top:1rem}
+.meta{font-family:var(--mono);font-size:.8rem;color:var(--muted);line-height:1.5}
+.intro{margin:1rem 0 3rem;color:var(--muted);max-width:60ch}
+
+/* placeholder blocks: replace with <img> or <video> */
+.ph{background:var(--block);display:flex;align-items:center;justify-content:center;font:.8rem var(--mono);color:var(--muted);width:100%}
+.r16x9{aspect-ratio:16/9}.r4x3{aspect-ratio:4/3}.r1x1{aspect-ratio:1}
+img,video{display:block;width:100%;height:auto}
+
+/* work grid */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:2.5rem 1.5rem}
+.card{text-decoration:none;display:block}
+.card .ph,.card img{margin-bottom:.75rem}
+.card h3{font-weight:500;font-size:1rem}
+.card:hover h3{text-decoration:underline}
+.featured{margin-bottom:3rem}
+
+/* project page */
+.pgrid{display:grid;grid-template-columns:1fr 2fr;gap:3rem;margin:2rem 0}
+.facts{display:grid;gap:.25rem}
+.docs{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;margin-top:1rem}
+figcaption{margin-top:.5rem}
+.pager{display:flex;justify-content:space-between;border-top:1px solid var(--line);margin-top:4rem;padding-top:1.25rem}
+.back{display:inline-block;margin-bottom:1.5rem}
+
+/* research list */
+.list{border-top:1px solid var(--line)}
+.list a{display:grid;grid-template-columns:5.5rem 1fr;gap:1rem;padding:1rem 0;border-bottom:1px solid var(--line);text-decoration:none}
+.list a:hover strong{text-decoration:underline}
+.list strong{font-weight:500}
+
+/* about / contact */
+.cols{display:grid;grid-template-columns:1fr 2fr;gap:3rem}
+dl{display:grid;grid-template-columns:6rem 1fr;gap:.5rem 1rem}
+dt{color:var(--muted)}
+.cv{margin-top:1.5rem;display:inline-block}
+
+
+/* work: superimposed index */
+.split{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.6fr);gap:3rem;margin-top:3rem;align-items:start}
+.index{list-style:none;padding:0;border-top:1px solid var(--line)}
+.index a{display:grid;grid-template-columns:7.5rem 1fr auto;gap:1rem;padding:.9rem 0;border-bottom:1px solid var(--line);text-decoration:none}
+.index a:hover span:nth-child(2),.index a:focus-visible span:nth-child(2){text-decoration:underline}
+.stack{position:relative;aspect-ratio:4/3;background:var(--block)}
+.layer{position:absolute;inset:0;opacity:.3;transition:opacity .3s}
+.layer:nth-child(2){transform:translate(2%,2%)}.layer:nth-child(3){transform:translate(-2%,3%)}.layer:nth-child(4){transform:translate(3%,-2%)}
+.layer .ph,.layer img{height:100%;object-fit:cover}
+.layer:nth-child(odd) .ph{background:#c9c9c4}.layer:nth-child(even) .ph{background:#a9a9a4}
+.layer.on{opacity:1;z-index:2;transform:none}
+.note{margin-top:1.5rem}
+.linkbtn{font:inherit;background:none;border:0;padding:0;margin-left:1rem;color:var(--fg);text-decoration:underline;text-underline-offset:3px;cursor:pointer}
+.grid{display:none;margin-top:2rem}
+.grid-mode .split{display:none}
+.grid-mode .grid{display:grid}
+.proof-end{margin-top:1.5rem}
+.axioms{list-style:none;padding:0;display:grid;gap:1rem;max-width:68ch}
+.axioms li{display:grid;grid-template-columns:6.5rem 1fr;gap:1rem}
+details{margin-top:2rem}summary{cursor:pointer}
+@media (max-width:760px){.split{grid-template-columns:1fr}.stack{order:-1}.index a{grid-template-columns:1fr auto}.index a .meta:first-child{grid-column:1/-1}}
+
+footer{padding:2rem var(--pad);border-top:1px solid var(--line);display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem}
+
+@media (max-width:760px){
+  .pgrid,.cols{grid-template-columns:1fr;gap:1.5rem}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header>
+  <a class="name" href="#work">Your Name</a>
+  <nav aria-label="Main">
+    <a href="#work" data-nav="work">Work</a>
+    <a href="#research" data-nav="research">Research</a>
+    <a href="#about" data-nav="about">About</a>
+    <a href="#contact" data-nav="contact">Contact</a>
+  </nav>
+</header>
+
+<main id="main">
+
+  <!-- WORK (home) -->
+  <section class="view" id="view-work" aria-label="Work">
+    <h1>Artist working in new media on the fourth dimension, excess, and the limits of representation.</h1>
+
+    <div class="split" id="split">
+      <ol class="index">
+        <li><a href="#project" data-k="1"><span class="meta">Proposition 01</span><span>Project Title</span><span class="meta">2026</span></a></li>
+        <li><a href="#project" data-k="2"><span class="meta">Proposition 02</span><span>Project Title</span><span class="meta">2025</span></a></li>
+        <li><a href="#project" data-k="3"><span class="meta">Proposition 03</span><span>Project Title</span><span class="meta">2025</span></a></li>
+        <li><a href="#project" data-k="4"><span class="meta">Proposition 04</span><span>Project Title (unresolved)</span><span class="meta">2024</span></a></li>
+      </ol>
+      <!-- One layer per project, same order. Replace each .ph with <img> (object-fit: cover). -->
+      <div class="stack" aria-hidden="true">
+        <div class="layer" data-k="1"><div class="ph">Work 01</div></div>
+        <div class="layer" data-k="2"><div class="ph">Work 02</div></div>
+        <div class="layer" data-k="3"><div class="ph">Work 03</div></div>
+        <div class="layer" data-k="4"><div class="ph">Work 04</div></div>
+      </div>
+    </div>
+
+    <p class="meta note">All works shown superimposed. Select a title to bring one into view.
+      <button class="linkbtn" id="toggle" aria-pressed="false">View as grid</button></p>
+
+    <div class="grid" id="grid">
+      <a class="card" href="#project"><div class="ph r4x3">Thumbnail</div><h3>Project Title</h3><p class="meta">Proposition 01, 2026, real-time installation</p></a>
+      <a class="card" href="#project"><div class="ph r4x3">Thumbnail</div><h3>Project Title</h3><p class="meta">Proposition 02, 2025, generative video, 6 min</p></a>
+      <a class="card" href="#project"><div class="ph r4x3">Thumbnail</div><h3>Project Title</h3><p class="meta">Proposition 03, 2025, web-based work</p></a>
+      <a class="card" href="#project"><div class="ph r4x3">Thumbnail</div><h3>Project Title (unresolved)</h3><p class="meta">Proposition 04, 2024, mixed media</p></a>
+    </div>
+  </section>
+
+  <!-- PROJECT TEMPLATE -->
+  <section class="view" id="view-project" aria-label="Project">
+    <a class="back meta" href="#work">Back to Work</a>
+    <p class="meta">Proposition 01</p>
+    <h1>Project Title</h1>
+
+    <div class="ph r16x9" style="margin-top:1.5rem">Hero image or Vimeo embed (16:9)</div>
+
+    <div class="pgrid">
+      <div class="facts meta">
+        <div>Year: 2026</div>
+        <div>Medium: Real-time installation</div>
+        <div>Dimensions: Variable</div>
+        <div>Duration: Looped</div>
+        <div>Tech: Three.js, GLSL</div>
+        <div>Status: Complete</div>
+      </div>
+      <div>
+        <p>Concept text, 150 to 250 words. State what the work does, how it is made, and what happens to the viewer. Keep it descriptive and specific.</p>
+        <p>A second paragraph can cover process, materials, or the relationship to your research.</p>
+        <p class="meta proof-end" title="End of proof. Omit on unresolved works.">∎</p>
+        <p class="meta" style="margin-top:1.5rem">Related research: <a href="#essay">Essay Title</a></p>
+      </div>
+    </div>
+
+    <h2>Documentation</h2>
+    <div class="docs">
+      <figure><div class="ph r4x3">Installation view</div><figcaption class="meta">Installation view, Venue, City, 2026. Photo: Name.</figcaption></figure>
+      <figure><div class="ph r4x3">Detail</div><figcaption class="meta">Detail. Photo: Name.</figcaption></figure>
+      <figure><div class="ph r4x3">Process</div><figcaption class="meta">Process image, 2025.</figcaption></figure>
+    </div>
+
+    <h2>Exhibitions and credits</h2>
+    <p class="meta">Exhibition Title, Venue, City, 2026<br>Collaborator: Name (sound)<br>Supported by: Funder</p>
+
+    <div class="pager meta">
+      <a href="#project">Previous project</a>
+      <a href="#project">Next project</a>
+    </div>
+  </section>
+
+  <!-- RESEARCH -->
+  <section class="view" id="view-research" aria-label="Research">
+    <h1>Research</h1>
+    <p class="intro">Writing and references that accompany the work.</p>
+    <div class="list">
+      <a href="#essay"><span class="meta">2026</span><span><strong>Essay Title</strong><br><span class="meta">Related work: Project Title</span></span></a>
+      <a href="#essay"><span class="meta">2025</span><span><strong>Essay Title</strong><br><span class="meta">Related work: Project Title</span></span></a>
+      <a href="#essay"><span class="meta">2025</span><span><strong>Reading notes: Serres, Genesis</strong><br><span class="meta">Related work: Project Title</span></span></a>
+    </div>
+  </section>
+
+  <!-- ESSAY TEMPLATE -->
+  <section class="view" id="view-essay" aria-label="Essay">
+    <a class="back meta" href="#research">Back to Research</a>
+    <h1>Essay Title</h1>
+    <p class="meta" style="margin:.75rem 0 2rem">2026. Related work: <a href="#project">Project Title</a></p>
+    <p>Essay text goes here. Keep line length near 65 characters for readability.</p>
+    <p>Use footnotes or a reference list at the end for citations.</p>
+    <h2>References</h2>
+    <p class="meta">Serres, M. (1982). <em>Genesis</em>. University of Michigan Press.</p>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="view" id="view-about" aria-label="About">
+    <h1>About</h1>
+    <div class="cols" style="margin-top:2rem">
+      <div>
+        <div class="ph r1x1">Portrait (optional)</div>
+        <a class="cv meta" href="cv.pdf" download>Download CV (PDF)</a>
+      </div>
+      <div>
+        <p class="meta" style="margin-bottom:1rem">Statement</p>
+        <ol class="axioms">
+          <li><span class="meta">Axiom 1</span><span>Existence is accepted as self-evident. Formalizing it leaves a remainder.</span></li>
+          <li><span class="meta">Definition 1</span><span>My practice works in that remainder: uncertainty, in-between states, traces, and presence.</span></li>
+          <li><span class="meta">Proposition 1</span><span>The fourth dimension can be felt where representation gives out, not depicted.</span></li>
+          <li><span class="meta">Method</span><span>Work through excess, not reduction. Failure of the work is data for the research.</span></li>
+        </ol>
+        <details><summary class="meta">Read as continuous text</summary>
+          <p style="margin-top:1rem">Paste your full artist statement here.</p>
+        </details>
+        <h2>Education</h2>
+        <dl><dt class="meta">2024</dt><dd>Degree, Institution</dd></dl>
+        <h2>Selected exhibitions</h2>
+        <dl>
+          <dt class="meta">2026</dt><dd>Exhibition Title, Venue, City</dd>
+          <dt class="meta">2025</dt><dd>Exhibition Title, Venue, City</dd>
+        </dl>
+        <h2>Press and publications</h2>
+        <dl><dt class="meta">2025</dt><dd>Publication, "Article Title"</dd></dl>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="view" id="view-contact" aria-label="Contact">
+    <h1>Contact</h1>
+    <dl style="margin-top:2rem">
+      <dt class="meta">Email</dt><dd><a href="mailto:you@example.com">you@example.com</a></dd>
+      <dt class="meta">Instagram</dt><dd><a href="#">@handle</a></dd>
+      <dt class="meta">Location</dt><dd>City, Country</dd>
+      <dt class="meta">Represented</dt><dd>Gallery Name, or "Independent"</dd>
+    </dl>
+  </section>
+
+</main>
+
+<footer class="meta">
+  <span>© 2026 Your Name</span>
+  <span>Last updated: October 2026</span>
+</footer>
+
+<script>
+// Simple hash router: shows one view at a time. Works without a build step.
+(function(){
+  var views=document.querySelectorAll('.view');
+  var navs=document.querySelectorAll('[data-nav]');
+  var parent={project:'work',essay:'research'};
+  function show(){
+    var id=(location.hash||'#work').slice(1);
+    if(!document.getElementById('view-'+id)) id='work';
+    views.forEach(function(v){v.classList.toggle('active',v.id==='view-'+id)});
+    var active=parent[id]||id;
+    navs.forEach(function(a){
+      if(a.dataset.nav===active) a.setAttribute('aria-current','page');
+      else a.removeAttribute('aria-current');
+    });
+    var t=document.getElementById('view-'+id).querySelector('h1');
+    document.title=(t?t.textContent.slice(0,40)+' – ':'')+'Your Name';
+    window.scrollTo(0,0);
+  }
+
+  // Superimposed index: hover or focus a title to bring that work forward.
+  var layers=document.querySelectorAll('.layer');
+  function focusLayer(k){layers.forEach(function(l){l.classList.toggle('on',l.dataset.k===k)})}
+  document.querySelectorAll('.index a').forEach(function(a){
+    ['mouseenter','focus'].forEach(function(e){a.addEventListener(e,function(){focusLayer(a.dataset.k)})});
+    ['mouseleave','blur'].forEach(function(e){a.addEventListener(e,function(){focusLayer(null)})});
+  });
+  var tg=document.getElementById('toggle'),wv=document.getElementById('view-work');
+  tg.addEventListener('click',function(){
+    var on=wv.classList.toggle('grid-mode');
+    tg.setAttribute('aria-pressed',on);tg.textContent=on?'View as superimposed':'View as grid';
+  });
+  window.addEventListener('hashchange',show);
+  show();
+})();
+</script>
+</body>
+</html>
